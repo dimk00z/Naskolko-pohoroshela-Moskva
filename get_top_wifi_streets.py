@@ -1,7 +1,7 @@
 import requests
 import os
-from pathlib import Path
 import json
+from pathlib import Path
 from zipfile import ZipFile
 from collections import OrderedDict
 from operator import itemgetter
