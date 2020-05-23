@@ -20,4 +20,4 @@ python get_top_wifi_streets.py
 ```
 ### Цель проекта
 
-Решение задачи [Apache Airflow](https://gist.github.com/Melevir/478d5fc40301d4d95f3f9dc63a65b402).
+Решение задачи для курса [Apache Airflow](https://gist.github.com/Melevir/478d5fc40301d4d95f3f9dc63a65b402).
