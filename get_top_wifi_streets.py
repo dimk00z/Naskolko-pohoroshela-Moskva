@@ -28,13 +28,13 @@ def get_streets_from_files(directory='json'):
     streets = {}
     for currentFile in Path(directory).iterdir():
         with open(currentFile, encoding='cp1251', errors='ignore') as json_file:
-            for element in json.load(json_file, strict=False):
-                if 'Address' in element and 'NumberOfAccessPoints' in element:
-                    street = element['Address'].split(',')[1]
+            for wifi_record in json.load(json_file, strict=False):
+                if 'Address' in wifi_record and 'NumberOfAccessPoints' in wifi_record:
+                    street = wifi_record['Address'].split(',')[1]
                     if street in streets:
-                        streets[street] += element['NumberOfAccessPoints']
+                        streets[street] += wifi_record['NumberOfAccessPoints']
                     else:
-                        streets[street] = element['NumberOfAccessPoints']
+                        streets[street] = wifi_record['NumberOfAccessPoints']
         os.remove(currentFile)
     os.rmdir(directory)
     return dict(sorted(streets.items(),
