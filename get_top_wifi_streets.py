@@ -3,7 +3,6 @@ import os
 import json
 from pathlib import Path
 from zipfile import ZipFile
-from collections import OrderedDict
 from operator import itemgetter
 
 MOS_RU_OBJECTS = {'libraries': '781682',
@@ -26,7 +25,7 @@ def get_json_files_from_mosru():
 
 
 def get_streets_from_files(directory='json'):
-    streets = OrderedDict()
+    streets = {}
     for currentFile in Path(directory).iterdir():
         with open(currentFile, encoding='cp1251', errors='ignore') as json_file:
             for element in json.load(json_file, strict=False):
