@@ -14,7 +14,7 @@ NUMBER_OF_TOP_STREETS = 5
 
 
 def get_json_files_from_mosru():
-    mos_url = "https://op.mos.ru/EHDWSREST/catalog/export/get?id= "
+    mos_url = "https://op.mos.ru/EHDWSREST/catalog/export/get?id="
     for wifi_object, value in MOS_RU_OBJECTS.items():
         response = requests.get(f'{mos_url}{value}')
         response.raise_for_status()
